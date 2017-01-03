@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	 <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <link href="css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+</head>
+<body style="background-color: white">
+<style type="text/css">
+    .myclass {
+        color: red
+    }
+</style>
+<script>
+function myFunction() {
+    document.body.style.background = "#f3f3f3";
+	style="background-color:red" id ="change"
+	
+}
+</script>
+
+<div style="background-color:yellow" id ="change">
+<p> TEXT </p>
+<button id="btnColor">  Click me </button>
+
+
+</div>
+
+
+
+
+
+
+
+
+<h1 onclick="addClass()">add solution</h1>
+<p >frist</p>
+<p>second</p>
+
+<form id="frmMain">
+	<div class="form-horizontal">
+		<div class="form-group">
+		<div>
+			<label>some number</label>
+			<input type="number" id="required" name="Username" required="true" >
+			</div>
+			<div>
+			<label>some number</label>
+			<input type="number" id="input2" name="Password" required="">
+            <label hidden="true" id="errorInput2" style="color: red">The number should be divisible by 10</label>
+			</div>
+			<div>
+			<label>somnumber</label>
+			<input type="number" name="Emaill" id="Emaill" minlength="7" required="">
+			</div>
+			</div>
+			<a onclick="submitFrm()" class="btn btn-warning">SUBMIT<a>
+		</div>
+	</div>
+</form>
+
+<table class="table" >
+   
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+   
+  
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+   
+  </table>
+  <a class="btn btn-success" onclick="addRow()">ADD ROW</a>
+
+</body>
+</html>
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- iCheck -->
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.i-checks').iCheck({
+                    checkboxClass: 'icheckbox_square-green',
+                    radioClass: 'iradio_square-green',
+                });
+            });
+        </script>
+
+
+        <script type="text/javascript">
+
+          
+			$('#change').css('background-color','red');
+        	
+
+        
+
+            function addClass(){
+                $('p').prop('class','myclass')
+            }
+
+        	function addRow() {
+
+        		$('.table').append('<tr>       <td>NEW ROW</td>       <td>NEW </td>       <td>mary@example.com</td>      </tr>')
+        	}
+
+            $('#frmMain').validate()
+
+              function submitFrm() {
+                debugger
+                if(parseInt($('#input2').val())%10 != 0)
+                    {
+                        $('#errorInput2').show()
+                    }
+                    else{
+                        $('#errorInput2').hide()
+                        $('#frmMain').submit()
+                    }
+
+                
+            }
+        </script>
